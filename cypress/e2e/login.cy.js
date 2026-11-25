@@ -1,5 +1,5 @@
 describe('Login', () => {
-  it('Login com dados válidos deve permiti o acesso ao dashboard', () => {
+  it('Login com dados válidos deve permitir o acesso ao dashboard', () => {
 
     cy.visit('http://localhost:4000')
 
