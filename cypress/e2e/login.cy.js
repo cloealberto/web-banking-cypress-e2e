@@ -1,7 +1,10 @@
 describe('Login', () => {
-  it('Login com dados válidos deve permitir o acesso ao dashboard', () => {
+  beforeEach(() => {
 
     cy.visit('http://localhost:4000')
+  })
+
+  it('Login com dados válidos deve permitir o acesso ao dashboard', () => {
 
     cy.get('#username').click().type('cloe.alberto')
     cy.get('#senha').click().type('101010')
@@ -9,13 +12,9 @@ describe('Login', () => {
 
     cy.contains('h4', 'Realizar Transferência').should('be.visible')
 
-
-
   })
 
   it('Login com dados inválidos deve mostrar mensagem de erro', () => {
-
-    cy.visit('http://localhost:4000')
 
     cy.get('#username').click().type('cloe.alberto')
     cy.get('#senha').click().type('121010')
